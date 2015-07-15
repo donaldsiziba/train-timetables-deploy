@@ -82,22 +82,6 @@
                                 </component>
                             </components>
                         </configuration>
-                        <executions>
-                            <execution>
-                                <id>undeploy-war</id>
-                                <phase>prepare-package</phase>
-                                <goals>
-                                    <goal>undeploy</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>deploy-war</id>
-                                <phase>install</phase>
-                                <goals>
-                                    <goal>deploy</goal>
-                                </goals>
-                            </execution>
-                        </executions>
                     </plugin>
                 </plugins>
             </build>
@@ -122,30 +106,9 @@
                         <configuration>
                             <username>${jboss.user}</username>
                             <password>${jboss.password}</password>
+                            <filename>dependency/train-timetables-${version.number}.war</filename>
+                            <name>train-timetables.war</name>
                         </configuration>
-                        <executions>
-                            <execution>
-                                <id>undeploy-war</id>
-                                <phase>prepare-package</phase>
-                                <goals>
-                                    <goal>undeploy</goal>
-                                </goals>
-                                <configuration>
-                                    <name>train-timetables.war</name>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>deploy-war</id>
-                                <phase>install</phase>
-                                <goals>
-                                    <goal>deploy</goal>
-                                </goals>
-                                <configuration>
-                                    <filename>dependency/train-timetables-${version.number}.war</filename>
-                                    <name>train-timetables.war</name>
-                                </configuration>
-                            </execution>
-                        </executions>
                     </plugin>
                 </plugins>
             </build>
